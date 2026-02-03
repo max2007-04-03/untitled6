@@ -10,13 +10,10 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         try {
-            // 1. Створюємо структуру (з DROP TABLE у скрипті це безпечно)
             DatabaseInitService.main(args);
 
-            // 2. Наповнюємо даними
             DatabasePopulateService.main(args);
 
-            // 3. Робимо запити
             DatabaseQueryService queryService = new DatabaseQueryService();
 
             System.out.println("Max Salary Workers:");
@@ -34,7 +31,7 @@ public class Main {
 
 
         } catch (Exception e) {
-            System.err.println("Сталася помилка в роботі додатка: " + e.getMessage());
+            System.err.println("Г‘ГІГ Г«Г Г±Гї ГЇГ®Г¬ГЁГ«ГЄГ  Гў Г°Г®ГЎГ®ГІВі Г¤Г®Г¤Г ГІГЄГ : " + e.getMessage());
         }
     }
 }
