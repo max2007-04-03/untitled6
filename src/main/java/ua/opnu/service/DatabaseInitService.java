@@ -13,7 +13,7 @@ public class DatabaseInitService {
             String sql = String.join("\n", Files.readAllLines(Paths.get(fileName)));
             Connection conn = Database.getInstance().getConnection();
 
-            // Використовуємо try-with-resources ТІЛЬКИ для Statement
+           
             try (Statement st = conn.createStatement()) {
                 st.executeUpdate(sql);
                 System.out.println("The database structure has been successfully initialized.");
