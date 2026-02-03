@@ -41,3 +41,10 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Build files
+target/
+
+
+test.mv.db
+test.trace.db
