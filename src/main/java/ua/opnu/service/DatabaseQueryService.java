@@ -42,7 +42,7 @@ public class DatabaseQueryService {
         try (Statement stmt = Database.getInstance().getConnection().createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
-                // Використовуємо ВЕЛИКІ літери для назв колонок
+                // Г‚ГЁГЄГ®Г°ГЁГ±ГІГ®ГўГіВєГ¬Г® Г‚Г…Г‹Г€ГЉВІ Г«ВіГІГҐГ°ГЁ Г¤Г«Гї Г­Г Г§Гў ГЄГ®Г«Г®Г­Г®ГЄ
                 result.add(new LongestProject(
                         rs.getString("NAME"),
                         rs.getInt("MONTH_COUNT")
@@ -57,7 +57,7 @@ public class DatabaseQueryService {
     public List<MaxSalaryWorker> findMaxSalaryWorker() {
         List<MaxSalaryWorker> result = new ArrayList<>();
         String sql = SqlReader.readSqlFile("sql/find_max_salary_worker.sql");
-        // Отримуємо посилання, але НЕ закриваємо його автоматично
+        // ГЋГІГ°ГЁГ¬ГіВєГ¬Г® ГЇГ®Г±ГЁГ«Г Г­Г­Гї, Г Г«ГҐ ГЌГ… Г§Г ГЄГ°ГЁГўГ ВєГ¬Г® Г©Г®ГЈГ® Г ГўГІГ®Г¬Г ГІГЁГ·Г­Г®
         try (Statement stmt = Database.getInstance().getConnection().createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
@@ -67,7 +67,7 @@ public class DatabaseQueryService {
         return result;
     }
 
-    // ВИПРАВЛЕНО: прибрали Connection з try-with-resources
+    
     public List<YoungestEldestWorker> findYoungestEldestWorkers() {
         List<YoungestEldestWorker> result = new ArrayList<>();
         String sql = SqlReader.readSqlFile("sql/find_youngest_eldest_workers.sql");
