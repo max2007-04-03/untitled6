@@ -42,7 +42,7 @@ public class DatabaseQueryService {
         try (Statement stmt = Database.getInstance().getConnection().createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
-                // Âèêîðèñòîâóºìî ÂÅËÈÊ² ë³òåðè äëÿ íàçâ êîëîíîê
+        
                 result.add(new LongestProject(
                         rs.getString("NAME"),
                         rs.getInt("MONTH_COUNT")
@@ -57,7 +57,7 @@ public class DatabaseQueryService {
     public List<MaxSalaryWorker> findMaxSalaryWorker() {
         List<MaxSalaryWorker> result = new ArrayList<>();
         String sql = SqlReader.readSqlFile("sql/find_max_salary_worker.sql");
-        // Îòðèìóºìî ïîñèëàííÿ, àëå ÍÅ çàêðèâàºìî éîãî àâòîìàòè÷íî
+        
         try (Statement stmt = Database.getInstance().getConnection().createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
