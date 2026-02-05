@@ -1,17 +1,22 @@
 package ua.opnu;
 
 
+import ua.opnu.model.MaxProjectCountClient;
 import ua.opnu.service.DatabaseInitService;
-import ua.opnu.service.DatabasePopulateService;
 import ua.opnu.service.DatabaseQueryService;
+
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         try {
+            // 1. ��������� ��������� (� DROP TABLE � ������ �� ��������)
             DatabaseInitService.main(args);
 
+            // 2. ���������� ������
             DatabasePopulateService.main(args);
 
+            // 3. ������ ������
             DatabaseQueryService queryService = new DatabaseQueryService();
 
             System.out.println("Max Salary Workers:");

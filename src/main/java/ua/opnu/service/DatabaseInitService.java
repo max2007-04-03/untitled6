@@ -14,8 +14,8 @@ public class DatabaseInitService {
             Connection conn = Database.getInstance().getConnection();
 
 
-            try (java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
-                pstmt.executeUpdate();
+            try (Statement st = conn.createStatement()) {
+                st.executeUpdate(sql);
                 System.out.println("The database structure has been successfully initialized.");
             }
         } catch (Exception e) {
