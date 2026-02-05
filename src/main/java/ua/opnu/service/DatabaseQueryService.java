@@ -1,10 +1,8 @@
 package ua.opnu.service;
 
 import ua.opnu.database.Database;
-import java.sql.Connection;
 import java.sql.SQLException;
 import ua.opnu.model.*;
-import ua.opnu.service.SqlReader;
 import ua.opnu.model.MaxProjectCountClient;
 import java.nio.file.Files;
 import java.nio.file.Paths;
