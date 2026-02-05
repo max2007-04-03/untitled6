@@ -2,7 +2,7 @@ package ua.opnu.service;
 
 import ua.opnu.database.Database;
 
-import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.sql.Connection;
 
 public class DatabasePopulateService {
@@ -11,11 +11,13 @@ public class DatabasePopulateService {
 
         try {
             Connection conn = Database.getInstance().getConnection();
-            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-                pstmt.execute();
-                System.out.println("Success");
+
+            try (Statement stmt = conn.createStatement()) {
+                stmt.execute(sql);
+                System.out.println("The tables have been successfully populated with data.");
             }
         } catch (Exception e) {
+            System.err.println("Error while filling the database: " + e.getMessage());
             e.printStackTrace();
         }
     }

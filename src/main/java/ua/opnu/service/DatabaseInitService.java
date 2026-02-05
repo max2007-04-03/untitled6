@@ -3,8 +3,8 @@ package ua.opnu.service;
 import ua.opnu.database.Database;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.sql.Statement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 public class DatabaseInitService {
     public static void main(String[] args) {
@@ -13,8 +13,8 @@ public class DatabaseInitService {
             String sql = String.join("\n", Files.readAllLines(Paths.get(fileName)));
             Connection conn = Database.getInstance().getConnection();
 
-            try (Statement st = conn.createStatement()) {
-                st.executeUpdate(sql);
+            try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                pstmt.execute();
                 System.out.println("The database structure has been successfully initialized.");
             }
         } catch (Exception e) {

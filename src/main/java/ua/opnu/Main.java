@@ -1,11 +1,9 @@
 package ua.opnu;
 
 
-import ua.opnu.model.MaxProjectCountClient;
 import ua.opnu.service.DatabaseInitService;
+import ua.opnu.service.DatabasePopulateService;
 import ua.opnu.service.DatabaseQueryService;
-
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
