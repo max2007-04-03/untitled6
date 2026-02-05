@@ -1,9 +1,8 @@
-package ua.opnu;
+package ua.opnu.service;
 
 import ua.opnu.database.Database;
 
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 import java.sql.Connection;
 
 public class DatabasePopulateService {

@@ -5,10 +5,8 @@ import ua.opnu.database.Database;
 import java.sql.*;
 
 import ua.opnu.model.*;
-import ua.opnu.SqlReader;
 import ua.opnu.model.MaxProjectCountClient;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+
 import java.util.ArrayList;
 import java.util.List;
 

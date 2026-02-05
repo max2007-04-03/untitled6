@@ -1,4 +1,4 @@
-package ua.opnu;
+package ua.opnu.service;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;

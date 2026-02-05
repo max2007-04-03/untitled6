@@ -15,7 +15,7 @@ public class DatabaseInitService {
 
 
             try (java.sql.PreparedStatement pstmt = conn.prepareStatement(sql)) {
-                pstmt.executeUpdate(); // Для скриптів створення структури
+                pstmt.executeUpdate();
                 System.out.println("The database structure has been successfully initialized.");
             }
         } catch (Exception e) {

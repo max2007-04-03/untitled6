@@ -1,6 +1,7 @@
 package ua.opnu.model;
 
 public class MaxProjectCountClient {
+
     private String name;
     private int projectCount;
 
@@ -11,6 +12,7 @@ public class MaxProjectCountClient {
 
     @Override
     public String toString() {
+
         return "Client: " + name + ", Projects: " + projectCount;
     }
 }
