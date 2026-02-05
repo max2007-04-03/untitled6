@@ -9,7 +9,7 @@ public class SqlReader {
         try {
             return String.join("\n", Files.readAllLines(Paths.get(filePath)));
         } catch (IOException e) {
-            throw new RuntimeException("Помилка читання файлу: " + filePath, e);
+            throw new RuntimeException("Error for  reading file " + filePath, e);
         }
     }
 }

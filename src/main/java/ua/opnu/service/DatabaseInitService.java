@@ -13,7 +13,6 @@ public class DatabaseInitService {
             String sql = String.join("\n", Files.readAllLines(Paths.get(fileName)));
             Connection conn = Database.getInstance().getConnection();
 
-
             try (Statement st = conn.createStatement()) {
                 st.executeUpdate(sql);
                 System.out.println("The database structure has been successfully initialized.");

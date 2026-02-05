@@ -4,7 +4,7 @@ import ua.opnu.database.Database;
 import java.sql.Connection;
 import java.sql.SQLException;
 import ua.opnu.model.*;
-import ua.opnu.SqlReader;
+import ua.opnu.service.SqlReader;
 import ua.opnu.model.MaxProjectCountClient;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -42,7 +42,6 @@ public class DatabaseQueryService {
         try (Statement stmt = Database.getInstance().getConnection().createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
-                // ������������� ����ʲ ����� ��� ���� �������
                 result.add(new LongestProject(
                         rs.getString("NAME"),
                         rs.getInt("MONTH_COUNT")
@@ -57,7 +56,6 @@ public class DatabaseQueryService {
     public List<MaxSalaryWorker> findMaxSalaryWorker() {
         List<MaxSalaryWorker> result = new ArrayList<>();
         String sql = SqlReader.readSqlFile("sql/find_max_salary_worker.sql");
-        // �������� ���������, ��� �� ��������� ���� �����������
         try (Statement stmt = Database.getInstance().getConnection().createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
@@ -67,7 +65,6 @@ public class DatabaseQueryService {
         return result;
     }
 
-    // ����������: �������� Connection � try-with-resources
     public List<YoungestEldestWorker> findYoungestEldestWorkers() {
         List<YoungestEldestWorker> result = new ArrayList<>();
         String sql = SqlReader.readSqlFile("sql/find_youngest_eldest_workers.sql");

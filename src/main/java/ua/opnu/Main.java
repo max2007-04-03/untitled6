@@ -10,13 +10,10 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         try {
-            // 1. ��������� ��������� (� DROP TABLE � ������ �� ��������)
             DatabaseInitService.main(args);
-
-            // 2. ���������� ������
+            
             DatabasePopulateService.main(args);
-
-            // 3. ������ ������
+            
             DatabaseQueryService queryService = new DatabaseQueryService();
 
             System.out.println("Max Salary Workers:");
@@ -34,7 +31,7 @@ public class Main {
 
 
         } catch (Exception e) {
-            System.err.println("������� ������� � ����� �������: " + e.getMessage());
+            System.err.println(" Error Occurred" + e.getMessage());
         }
     }
 }
